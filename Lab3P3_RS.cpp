@@ -1,18 +1,20 @@
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
-
+int*** crearMatriz(int);
 int Ejercicio1();
 int Ejercicio2(int);
-int Ejercicio3();
-
+void Ejercicio3(string);
+void eliminarMatriz(int***,int);
 
 int main(){
 	int opcion = 0;
 	while(opcion != 4){
+		cout<<""<<endl;
 		cout<<"Laboratorio 3 Programacion 3"<<endl;
 		cout<<"-----MENU-----"<<endl
 	    	<< "1) Podar y buscar"<<endl
@@ -37,7 +39,10 @@ int main(){
 				break;
 			case 3:{
 				cout<<"Ejercicio 3:"<<endl;
-				
+				string Date;
+				cout<<"Ingrese la fecha en el siguiente formato YYYYMMDD"<<endl;
+				cin>>Date;
+				Ejercicio3(Date);
 				}
 				break;
 			Default:{}
@@ -45,13 +50,40 @@ int main(){
 		}
 	}
 }
-
+int Ejercicio1(){
+}
 int Ejercicio2(int Grado){
-	vector <int> Ecuacion;
+	
 	int temp;
 	for(int i = 0; i <= Grado; i++){
-		cout<<"Ingrese el numero con el grado xᶺ"<<endl;
+		cout<<"Ingrese el numero con el grado xᶺ"<<i<<endl;
 		cin >> temp;
-		
+			
 	}
+}
+void Ejercicio3(string date){
+	
+}
+int*** crearMatriz(int size){
+	int*** matriz = new int**[size];
+	for(int i = 0; i < size; i++){
+		matriz[i] = new int*[3];
+	}
+	for(int i = 0; i < size; i++){
+		for(int j = 0; j < size; j++){
+			matriz[i][j] = new int[size];
+		}
+	}
+	return matriz;
+}
+void eliminarMatriz(int*** matriz, int size){
+	for(int i = 0; i < size; i++){
+		for(int j = 0; j < 3; j++){
+			delete[] matriz[i][j];
+		}
+	}
+	for(int i = 0; i < size; i++){
+		delete[] matriz[i];
+	}
+	return;
 }
