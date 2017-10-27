@@ -2,6 +2,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -62,7 +63,73 @@ int Ejercicio2(int Grado){
 	}
 }
 void Ejercicio3(string date){
-	
+	string Y = "";
+	string M = "";
+	string D = "";
+	for(int i = 0; i < date.size(); i++){
+		if(i <= 3){
+			Y += date.at(i);
+		}
+		if(i > 3 && i <= 5){
+			M += date.at(i);
+		}
+		if(i > 5){
+			D += date.at(i);
+		}
+	}
+	int mes = atoi(M.c_str());
+	switch(mes){
+		case 1:{
+			M = "Enero";
+		}
+		break;
+		case 2:{
+			M = "Febrero";
+		}
+		break;
+		case 3:{
+			M = "Marzo";
+		}
+		break;
+		case 4:{
+			M = "Abril";
+		}
+		break;
+		case 5:{
+			M = "";
+		}
+		break;
+		case 6:{
+			M = "";
+		}
+		break;
+		case 7:{
+			M = "";
+		}
+		break;
+		case 8:{
+			M = "";
+		}
+		break;
+		case 9:{
+			M = "";
+		}
+		break;
+		case 10:{
+			M = "";
+		}
+		break;
+		case 11:{
+			M = "";
+		}
+		break;
+		case 12:{
+			M = "";
+		}
+		break;
+		default:{}
+		break;
+	}
 }
 int*** crearMatriz(int size){
 	int*** matriz = new int**[size];
