@@ -96,40 +96,43 @@ void Ejercicio3(string date){
 		}
 		break;
 		case 5:{
-			M = "";
+			M = "Mayo";
 		}
 		break;
 		case 6:{
-			M = "";
+			M = "Junio";
 		}
 		break;
 		case 7:{
-			M = "";
+			M = "Julio";
 		}
 		break;
 		case 8:{
-			M = "";
+			M = "Agosto";
 		}
 		break;
 		case 9:{
-			M = "";
+			M = "Septiembre";
 		}
 		break;
 		case 10:{
-			M = "";
+			M = "Octubre";
 		}
 		break;
 		case 11:{
-			M = "";
+			M = "Noviembre";
 		}
 		break;
 		case 12:{
-			M = "";
+			M = "Diciembre";
 		}
 		break;
-		default:{}
+		default:{
+			M = "No existe";
+		}
 		break;
 	}
+	
 }
 int*** crearMatriz(int size){
 	int*** matriz = new int**[size];
