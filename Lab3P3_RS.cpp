@@ -9,11 +9,12 @@ using namespace std;
 int*** crearMatriz(int);
 int Ejercicio1();
 int Ejercicio2(int);
-void Ejercicio3(string);
+string Ejercicio3(string);
 void eliminarMatriz(int***,int);
 
 int main(){
 	int opcion = 0;
+	vector <string> vec;
 	while(opcion != 4){
 		cout<<""<<endl;
 		cout<<"Laboratorio 3 Programacion 3"<<endl;
@@ -43,7 +44,7 @@ int main(){
 				string Date;
 				cout<<"Ingrese la fecha en el siguiente formato YYYYMMDD"<<endl;
 				cin>>Date;
-				Ejercicio3(Date);
+				string temp = Ejercicio3(Date);
 				}
 				break;
 			Default:{}
@@ -64,12 +65,12 @@ int Ejercicio2(int Grado){
 			
 	}
 }
-void Ejercicio3(string date){
+string Ejercicio3(string date){
 	string Y = "";
 	string M = "";
 	string D = "";
 	bool ExisteM = true;
-	vector <string> vec;
+	
 	for(int i = 0; i < date.size(); i++){
 		if(i <= 3){
 			Y += date.at(i);
@@ -187,6 +188,11 @@ void Ejercicio3(string date){
 	}else{
 		cout<<"Alguna informacion no es valida"<<endl;
 	}
+	string oracion;
+	std::stringstream sstm;
+	sstm<<"Dia, "<<D<<" de "<<M<<" del "<<Y<<".";
+	oracion = sstm.str();
+	return oracion;
 }
 int*** crearMatriz(int size){
 	int*** matriz = new int**[size];
