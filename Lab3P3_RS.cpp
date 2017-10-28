@@ -45,6 +45,33 @@ int main(){
 				cout<<"Ingrese la fecha en el siguiente formato YYYYMMDD"<<endl;
 				cin>>Date;
 				string temp = Ejercicio3(Date);
+				vec.push_back(temp);
+				int opcion2 = 0;
+				while(opcion2 != 3){
+
+					cout<<"--Menu ejercicio 3--"<<endl
+				   	 <<"1)Listar todo"<<endl
+				   	 <<"2)Listar ordenado"<<endl
+				   	 <<"3)salir del ejercicio3"<<endl
+				   	 <<"Elija la opcion que desea"<<endl;
+					cin>>opcion2;
+					switch(opcion2){
+					case 1:{
+						cout<<"Listando todo"<<endl;
+						
+						}
+					break;
+					case 2:{
+						cout<<"Ordenando"<<endl;
+						
+						}
+					break;
+					case 3:{}
+					break;
+					default:{}
+					break;
+					}
+					}
 				}
 				break;
 			Default:{}
