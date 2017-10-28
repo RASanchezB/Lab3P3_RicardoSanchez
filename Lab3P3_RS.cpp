@@ -54,8 +54,10 @@ int main(){
 int Ejercicio1(){
 }
 int Ejercicio2(int Grado){
-	
+	int*** matriz;
+	matriz = crearMatriz(Grado); 
 	int temp;
+	int columna = 0;
 	for(int i = 0; i <= Grado; i++){
 		cout<<"Ingrese el numero con el grado xᶺ"<<i<<endl;
 		cin >> temp;
@@ -66,6 +68,8 @@ void Ejercicio3(string date){
 	string Y = "";
 	string M = "";
 	string D = "";
+	bool ExisteM = true;
+	vector <string> vec;
 	for(int i = 0; i < date.size(); i++){
 		if(i <= 3){
 			Y += date.at(i);
@@ -78,61 +82,111 @@ void Ejercicio3(string date){
 		}
 	}
 	int mes = atoi(M.c_str());
+	int dia = atoi(D.c_str());
+	int anio = atoi(Y.c_str());
 	switch(mes){
 		case 1:{
 			M = "Enero";
+			if(dia > 31  || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 2:{
 			M = "Febrero";
+			if(anio%4 == 0){
+				if(dia > 29 || dia <= 0){
+					ExisteM = false;
+				}
+			}else{
+				if(dia > 28 || dia <= 0){
+					ExisteM = false;
+				}
+			}
 		}
 		break;
 		case 3:{
 			M = "Marzo";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 4:{
 			M = "Abril";
+			if(dia > 30 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 5:{
 			M = "Mayo";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 6:{
 			M = "Junio";
+			if(dia > 30 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 7:{
 			M = "Julio";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 8:{
 			M = "Agosto";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 9:{
 			M = "Septiembre";
+			if(dia > 30 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 10:{
 			M = "Octubre";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 11:{
 			M = "Noviembre";
+			if(dia > 30 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		case 12:{
 			M = "Diciembre";
+			if(dia > 31 || dia <= 0){
+				ExisteM = false;
+			}
 		}
 		break;
 		default:{
 			M = "No existe";
+			ExisteM = false;
 		}
 		break;
 	}
-	
+	if(ExisteM){
+		cout<<"Dia, "<<D<<" de "<<M<<" del "<<Y<<"."<<endl;
+
+	}else{
+		cout<<"Alguna informacion no es valida"<<endl;
+	}
 }
 int*** crearMatriz(int size){
 	int*** matriz = new int**[size];
